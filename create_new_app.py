@@ -197,11 +197,11 @@ while 1:
 
 
 
-        from time import sleep
 
-        os.system(f'python -m venv {app_dir}/venv')
+        # os.system(f'python -m venv {app_dir}/venv')
         with open(f'{app_dir}/pip_lib_list.txt', 'w') as f:
-            f.write('pip install flask flask-sqlalchemy flask-migrate flask-wtf flask-moment flask-soketio flask-ckeditor pymysql')
+            f.write(
+                'python -m venv venv\npip install flask flask-sqlalchemy flask-migrate flask-wtf flask-moment flask-soketio flask-socketio pymysql')
 
         dir_name_end = dir_name.split('\\')
 
