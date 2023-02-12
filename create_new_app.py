@@ -76,7 +76,6 @@ while 1:
         print('\n###############################################\n')
         dir_name = input('(Q)uit | (R)estart || dir name --> ')
         dir_name = clear_name(dir_name)
-        print(dir_name)
         app_dir = None
 
         if dir_name.lower() == 'q': exit()
@@ -95,7 +94,6 @@ while 1:
             elif app_name.lower() == 'q': exit()
             else: 
                 app_name = clear_name(app_name)
-                print(app_name)
                 apps_name.append(app_name)
 
 
