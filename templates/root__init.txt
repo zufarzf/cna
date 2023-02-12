@@ -12,9 +12,7 @@ migrate = Migrate()
 # =====================
 
 
-{% for i in import_app %}
-from .{{ i }} import db_models
-{%- endfor %}
+from . import db_models
 
 
 # ==============================

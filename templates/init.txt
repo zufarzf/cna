@@ -7,5 +7,5 @@ from flask import Blueprint
     static_folder='{{ app_name }}-static'
     )
 
-from . import db_models
+
 from . import views

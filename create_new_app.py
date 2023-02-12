@@ -139,6 +139,12 @@ while 1:
         with open(f'{root_dir}/__init__.py', 'w') as f: f.write(root_init)
         # ===============================================================
 
+        # db models
+        # ===============================================================
+        template__db_models = enviroment.get_template('db_models.txt').render()        
+        with open(f'{root_dir}/db_models.py', 'w') as f: f.write(template__db_models)
+        # ===============================================================
+
 
         # ###############################################################
         # ###############################################################
@@ -153,15 +159,6 @@ while 1:
             with open(f'{root_dir}/{file_name}/__init__.py', 'w') as f: f.write(init)
         # ===============================================================
 
-
-        # db models
-        # ===============================================================
-        template__db_models = enviroment.get_template('db_models.txt')
-        
-        for file_name in apps_name:
-            db_models = template__db_models.render(app_name=file_name)
-            with open(f'{root_dir}/{file_name}/db_models.py', 'w') as f: f.write(db_models)
-        # ===============================================================
 
 
         # views
