@@ -1,0 +1,1 @@
+pip install jinja2 && python D:\Programms\create_new_app\create_new_app.py

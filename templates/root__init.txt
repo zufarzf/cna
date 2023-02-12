@@ -1,0 +1,41 @@
+from flask import Flask
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+# -------------------------------------
+from config import config
+
+
+
+# =====================
+db = SQLAlchemy()
+migrate = Migrate()
+# =====================
+
+
+
+# ==============================
+# ==============================
+def create_app(config_type:str):
+    app = Flask(__name__)
+    app.config.from_object(config[config_type])
+
+    #Initialization
+    # ======================
+    db.init_app(app)
+    migrate.init_app(app, db)
+
+    #Register a Blueprint
+    # =======================
+    {% for i in import_app %}
+    from .{{ i }} import {{ i }}
+    {%- endfor  -%}
+
+    {% for i in import_app %}
+    app.register_blueprint({{ i }}, url_prefix="/{{ i }}")
+    {%- endfor %}
+
+    # ========================
+    return app
+
+# ========================================
+# ========================================

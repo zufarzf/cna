@@ -1,0 +1,11 @@
+from flask import Blueprint
+
+{{ app_name }} = Blueprint(
+    '{{ app_name }}',
+    __name__,
+    template_folder='{{ app_name }}-templates',
+    static_folder='{{ app_name }}-static'
+    )
+
+from . import db_models
+from . import views
