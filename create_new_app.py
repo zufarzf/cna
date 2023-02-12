@@ -201,7 +201,7 @@ while 1:
         # os.system(f'python -m venv {app_dir}/venv')
         with open(f'{app_dir}/pip_lib_list.txt', 'w') as f:
             f.write(
-                'python -m venv venv\npip install flask flask-sqlalchemy flask-migrate flask-wtf flask-moment flask-soketio flask-socketio pymysql')
+                'python -m venv venv\nvenv\\scripts\\activate\npip install flask flask-sqlalchemy flask-migrate flask-wtf flask-moment flask-socketio pymysql')
 
         dir_name_end = dir_name.split('\\')
 
