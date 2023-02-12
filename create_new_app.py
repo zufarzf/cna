@@ -156,9 +156,11 @@ while 1:
 
         # db models
         # ===============================================================
+        template__db_models = enviroment.get_template('db_models.txt')
+        
         for file_name in apps_name:
-            template__dbModels = enviroment.get_template('db_models.txt').render()
-            with open(f'{root_dir}/{file_name}/db_models.py', 'w') as f: f.write(template__dbModels)
+            db_models = template__db_models.render(app_name=file_name)
+            with open(f'{root_dir}/{file_name}/db_models.py', 'w') as f: f.write(template__db_models)
         # ===============================================================
 
 
