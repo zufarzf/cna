@@ -49,7 +49,7 @@ def clear_name(name):
     for i in el_list:
         for key in name_dict:
             dict_keys.append(key)
-        if i in name_dict[dict_keys[-1]]: name_dict[dict_keys[-1] + 1] = name_dict[dict_keys[-1]].replace(i, '_')
+        if i in name_dict[dict_keys[-1]]: name_dict[dict_keys[-1] + 1] = name_dict[dict_keys[-1]].replace(i, '')
     result = name_dict[dict_keys[-1]]
     dict_keys.clear()
     name_dict.clear()
