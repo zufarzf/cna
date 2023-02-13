@@ -18,16 +18,16 @@ def default_app_path(dir_name):
     if app_dir == None:
         # ----------------------------------------------------------------------------
         if os.path.exists(f'C:\\Users\\{pc_user_name}\\OneDrive\\Desktop'):
-            app_dir = f'C:/Users/{pc_user_name}/OneDrive/Desktop/{dir_name}'
+            app_dir = f'C:/Users/{pc_user_name}/OneDrive/Desktop/{clear_name(dir_name)}'
         # ----------------------------------------------------------------------------
         elif os.path.exists(f'C:\\Users\\{pc_user_name}\\OneDrive\\Рабочий стол'):
-            app_dir = f'C:/Users/{pc_user_name}/OneDrive/Рабочий стол/{dir_name}'
+            app_dir = f'C:/Users/{pc_user_name}/OneDrive/Рабочий стол/{clear_name(dir_name)}'
         # ----------------------------------------------------------------------------
         elif os.path.exists(f'C:\\Users\\{pc_user_name}\\Рабочий стол'):
-            app_dir = f'C:/Users/{pc_user_name}/Рабочий стол/{dir_name}'
+            app_dir = f'C:/Users/{pc_user_name}/Рабочий стол/{clear_name(dir_name)}'
         # ----------------------------------------------------------------------------
         elif os.path.exists(f'C:\\Users\\{pc_user_name}\\Desktop'):
-            app_dir = f'C:/Users/{pc_user_name}/Desktop/{dir_name}'
+            app_dir = f'C:/Users/{pc_user_name}/Desktop/{clear_name(dir_name)}'
     # ----------------------------------------------------------------------------
     if os.path.exists(app_dir): return None
     else: return f'{app_dir}'
@@ -75,7 +75,6 @@ while 1:
     while 1:
         print('\n###############################################\n')
         dir_name = input('(Q)uit | (R)estart || dir name --> ')
-        dir_name = clear_name(dir_name)
         app_dir = None
 
         if dir_name.lower() == 'q': exit()
